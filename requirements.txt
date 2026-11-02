@@ -1,0 +1,3 @@
+# Extra Python packages installed into the Airflow image (see Dockerfile).
+# Airflow itself, requests, and pendulum already ship with the base image.
+duckdb==1.5.6

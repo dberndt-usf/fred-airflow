@@ -1,0 +1,116 @@
+{
+  "series": [
+    {
+      "id": "DFF",
+      "name": "Federal Funds Effective Rate",
+      "category": "Interest Rates",
+      "frequency": "daily",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "DGS10",
+      "name": "10-Year Treasury Constant Maturity Yield",
+      "category": "Interest Rates",
+      "frequency": "daily",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "SP500",
+      "name": "S&P 500 Index",
+      "category": "Financial Markets",
+      "frequency": "daily",
+      "aggregation_method": "eop"
+    },
+    {
+      "id": "VIXCLS",
+      "name": "CBOE Volatility Index (VIX)",
+      "category": "Financial Markets",
+      "frequency": "daily",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "MORTGAGE30US",
+      "name": "30-Year Fixed Rate Mortgage Average",
+      "category": "Interest Rates",
+      "frequency": "weekly",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "WM1NS",
+      "name": "M1 Money Supply",
+      "category": "Money Supply",
+      "frequency": "weekly",
+      "aggregation_method": "eop"
+    },
+    {
+      "id": "WM2NS",
+      "name": "M2 Money Supply",
+      "category": "Money Supply",
+      "frequency": "weekly",
+      "aggregation_method": "eop"
+    },
+    {
+      "id": "CORESTICKM159SFRBATL",
+      "name": "Sticky Price CPI less Food and Energy",
+      "category": "Prices",
+      "frequency": "monthly",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "CPILFESL",
+      "name": "Core CPI (All Items Less Food and Energy)",
+      "category": "Prices",
+      "frequency": "monthly",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "UNRATE",
+      "name": "Unemployment Rate",
+      "category": "Labor Market",
+      "frequency": "monthly",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "PAYEMS",
+      "name": "All Employees, Total Nonfarm Payrolls",
+      "category": "Labor Market",
+      "frequency": "monthly",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "RSAFS",
+      "name": "Advance Retail Sales: Retail Trade and Food Services",
+      "category": "Consumption",
+      "frequency": "monthly",
+      "aggregation_method": "sum"
+    },
+    {
+      "id": "GDP",
+      "name": "Gross Domestic Product (Nominal)",
+      "category": "Output",
+      "frequency": "quarterly",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "GDPC1",
+      "name": "Real Gross Domestic Product",
+      "category": "Output",
+      "frequency": "quarterly",
+      "aggregation_method": "avg"
+    },
+    {
+      "id": "GFDEBTN",
+      "name": "Federal Debt: Total Public Debt",
+      "category": "Fiscal",
+      "frequency": "quarterly",
+      "aggregation_method": "eop"
+    },
+    {
+      "id": "FPCPITOTLZGUSA",
+      "name": "Inflation, Consumer Prices for the United States",
+      "category": "Prices",
+      "frequency": "yearly",
+      "aggregation_method": "avg"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.env
+logs/
+data/bronze/
+data/silver/
+data/gold/
+data/reports/
+__pycache__/
+*.pyc

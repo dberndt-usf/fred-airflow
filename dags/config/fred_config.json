@@ -1,0 +1,22 @@
+{
+  "fred_api": {
+    "base_url": "https://api.stlouisfed.org/fred",
+    "api_key_variable": "fred_api_key",
+    "timeout_seconds": 30
+  },
+  "general": {
+    "log_level": "INFO",
+    "project_name": "fred_medallion_pipeline"
+  },
+  "intervals": {
+    "daily": 10,
+    "weekly": 20,
+    "monthly": 40,
+    "quarterly": 80,
+    "yearly": 160
+  },
+  "fault_injection": {
+    "enabled": false,
+    "failure_rate": 0.3
+  }
+}

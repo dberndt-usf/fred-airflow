@@ -29,7 +29,7 @@ laptop with Docker; no database server is needed for the analytic data.
 
 ## How the pipeline fits together
 
-Four DAGs, linked by **assets**: each DAG runs when the data it depends
+Three DAGs, linked by **assets**: each DAG runs when the data it depends
 on changes.
 
 ```mermaid
@@ -78,7 +78,7 @@ the classroom network.
 **In a hurry?** If you already have Docker running and a FRED key:
 
 ```bash
-git clone <this repository's URL> fred-airflow
+git clone https://github.com/dberndt-usf/fred-airflow.git
 cd fred-airflow
 cp .env.example .env            # then put your key in .env
 docker compose up -d --build
@@ -124,7 +124,7 @@ requests per key, so sharing one slows everyone down.
 Either clone with Git:
 
 ```bash
-git clone <this repository's URL> fred-airflow
+git clone https://github.com/dberndt-usf/fred-airflow.git
 cd fred-airflow
 ```
 
@@ -323,7 +323,7 @@ Stopping Docker Desktop or shutting down your laptop is also safe; run
 
 | Material | For | What it is |
 | --- | --- | --- |
-| [Lab handout](docs/lab_handout.md) | students | a guided, roughly 100-minute lab in six parts with questions Q1 to Q20 |
+| [Lab handout](docs/lab_handout.md) | students | a guided, roughly 100-minute lab in six parts with questions Q1 to Q20, plus an optional Part G (Q21 to Q24) |
 | [Student guide](docs/student_guide.md) | students | companion to the teaching case: key terms, where the case meets the code, a reading order, and discussion prep |
 | [`analysis/demo_queries.sql`](analysis/demo_queries.sql) | everyone | a DuckDB tour from bronze to gold in one session (`.read analysis/demo_queries.sql`) |
 | [`analysis/example_queries.sql`](analysis/example_queries.sql) | everyone | star joins, drill-across, growth rates, and rollup comparisons |
@@ -533,7 +533,7 @@ files under `data/gold` and `data/reports`, for a completely fresh start.
 | `airflow-init` shows `Exited (1)` | setup failed | `docker compose logs airflow-init`, fix the cause, then `docker compose up -d` |
 | Permission errors on `logs/` or `data/` (Linux) | `AIRFLOW_UID` does not match your user | set `AIRFLOW_UID` in `.env` to `id -u`, then `docker compose up -d` |
 | `fetch_series` fails at once with HTTP 400 or 403 | wrong API key | fix `.env`, then run `docker compose up -d` |
-| Port 8080 is already in use | another program uses it | change `"8080:8080"` to `"8081:8080"` in `docker-compose.yaml` |
+| Port 8080 is already in use | another program uses it | change `"127.0.0.1:8080:8080"` to `"127.0.0.1:8081:8080"` in `docker-compose.yaml` and use port 8081 |
 | Containers keep restarting | Docker has less than 4 GB of memory | raise the limit in Docker Desktop settings |
 | A DAG is missing from the UI | a Python error in a DAG file | `docker compose exec airflow-scheduler airflow dags list-import-errors` |
 | A run fetches nothing | no frequency is due today | trigger with `{"force_all": true}` |

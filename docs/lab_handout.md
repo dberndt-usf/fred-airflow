@@ -4,7 +4,7 @@ October 5, 2026
 
 ## Overview
 
-In this lab you run a two-DAG Apache Airflow 3 pipeline that fetches 16 economic time series from FRED, lands the raw JSON (bronze), cleans it into Parquet (silver), and builds star schemas in DuckDB (gold). Then you break it on purpose and query the result. Plan on about 100 minutes.
+In this lab you run an Apache Airflow 3 pipeline of three DAGs that fetches 16 economic time series from FRED, lands the raw JSON (bronze), cleans it into Parquet (silver), and builds star schemas in DuckDB (gold). Then you break it on purpose and query the result. Plan on about 100 minutes.
 
 By the end you should be able to:
 
@@ -31,7 +31,7 @@ If you cannot install the DuckDB CLI, the Airflow image includes a copy. Put `do
 
 Set up the project folder:
 
-1. Unzip or clone the `airflow-poc` folder and open a terminal in it. Every command in this handout runs from that folder.
+1. Clone the `fred-airflow` repository (or download and unzip it; the folder is then `fred-airflow-main`) and open a terminal in it. Every command in this handout runs from that folder.
 2. Copy `.env.example` to `.env` (Windows: `copy .env.example .env`; macOS/Linux: `cp .env.example .env`).
 3. Open `.env` and paste your key after `FRED_API_KEY=`. Leave `SLACK_WEBHOOK_URL` blank. Never share or submit this file.
 
@@ -376,7 +376,7 @@ Most problems come from Docker resources, the `.env` file, or a SQL client holdi
 | --- | --- | --- |
 | `docker compose up` stops with a `FRED_API_KEY` error | no `.env` file, or the key is blank | create `.env` from `.env.example` and add your key |
 | `fetch_series` fails at once with HTTP 400 or 403 | wrong API key | fix `.env`, then run `docker compose up -d` to recreate the containers |
-| Port 8080 is already in use | another program uses it | stop that program, or change `"8080:8080"` to `"8081:8080"` in `docker-compose.yaml` and use port 8081 |
+| Port 8080 is already in use | another program uses it | stop that program, or change `"127.0.0.1:8080:8080"` to `"127.0.0.1:8081:8080"` in `docker-compose.yaml` and use port 8081 |
 | Containers keep restarting | Docker has less than 4 GB of memory | raise the memory limit in Docker Desktop settings |
 | A DAG is missing from the UI | a Python error in a DAG file | run `docker compose exec airflow-scheduler airflow dags list-import-errors` |
 | A run fetches nothing | no frequency is due today | trigger with `force_all` switched on |

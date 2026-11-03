@@ -59,7 +59,7 @@ SELECT quarter_label,
        round(100 * (SP500 / lag(SP500) OVER w - 1), 1)            AS sp500_return_pct
 FROM macro_quarterly_wide
 WINDOW w AS (ORDER BY quarter_key)
-QUALIFY quarter_key >= 20230
+QUALIFY quarter_key >= 20231
 ORDER BY quarter_key;
 
 

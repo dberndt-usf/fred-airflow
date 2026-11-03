@@ -548,3 +548,9 @@ Data from FRED, Federal Reserve Bank of St. Louis,
 [terms of use](https://fred.stlouisfed.org/docs/api/terms_of_use.html);
 some series, such as the S&P 500, carry additional restrictions from
 their original publishers.
+
+## License
+
+The code and documentation in this repository are released under the
+[MIT License](LICENSE). The license covers this repository only, not the
+FRED data the pipeline downloads, which remains subject to FRED's terms.

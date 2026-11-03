@@ -158,7 +158,7 @@ results, or screenshots to class.
 10. **The decision ahead.** For each of Sam's three paths, list which
     files in this repository would change and which would survive. Look
     up the cost of one managed Airflow service and one cloud data
-    warehouse for a team of six.
+    warehouse for a small lab team.
 11. **Modeling stock prices.** Look up the 2018 GICS reclassification
     and list three companies that changed sector. For each of the three
     stock designs in case section 7, describe what happens to those

@@ -64,7 +64,7 @@ ORDER BY quarter_key;
 
 
 -- 6. Why aggregation_method matters: three ways to roll up M2.
---    M2 is a stock (a level), so end-of-period (eop) is the default.
+--    M2 is a level (a "stock"), so end-of-period (eop) is the default.
 SELECT o.quarter_key,
        round(avg(o.value), 1)                 AS m2_average,
        round(arg_max(o.value, o.obs_date), 1) AS m2_end_of_period,
